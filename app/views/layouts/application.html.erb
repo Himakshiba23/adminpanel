@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DeviseEmail</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item active">
+            <% if user_signed_in? %>
+              <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-outline-dark" %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark"  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-dark"  %>
+              <%= link_to "Login", new_user_session_path, class: "btn btn-outline-dark"  %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>

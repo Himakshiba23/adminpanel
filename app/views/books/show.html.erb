@@ -1,0 +1,13 @@
+<div id="addFormCenter">
+  <div class="col-sm-10 form-group-lg">
+    <p id="notice"><%= notice %></p>
+    
+    <p>
+      <strong>Name:</strong>
+      <%= @book.name %>
+    </p>
+    
+    <%= link_to 'Edit', edit_book_path(@book) %> |
+    <%= link_to 'Back', books_path %>
+  </div>
+</div>
